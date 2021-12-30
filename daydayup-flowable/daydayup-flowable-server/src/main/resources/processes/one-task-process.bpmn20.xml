@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+        xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+        targetNamespace="Examples">
+
+    <!--process：
+            id、name - 映射为Flowable ProcessDefinition对象的key、name参数。
+            可以通过runtimeService.startProcessInstanceByKey 启动一个新流程实例
+             -->
+    <process id="oneTaskProcess" name="The One Task Process">
+        <startEvent id="theStart"/>
+        <sequenceFlow id="flow1" sourceRef="theStart" targetRef="theTask"/>
+        <userTask id="theTask" name="my task"/>
+        <sequenceFlow id="flow2" sourceRef="theTask" targetRef="theEnd"/>
+        <endEvent id="theEnd"/>
+    </process>
+
+</definitions>

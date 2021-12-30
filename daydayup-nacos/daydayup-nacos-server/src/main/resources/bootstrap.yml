@@ -1,0 +1,28 @@
+daydayup:
+  nacos:
+    ip: ${NACOS_IP:@nacos.ip@}
+    port: ${NACOS_PORT:@nacos.port@}
+    namespace: ${NACOS_NAMESPACE:@nacos.namespace@}
+    username: ${NACOS_USERNAME:@nacos.username@}
+    password: ${NACOS_PASSWORD:@nacos.password@}
+server:
+  port: 8002
+spring:
+  application:
+    name: '@project.artifactId@'
+  profiles:
+    active: '@profile.active@'
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      config:
+        server-addr: ${daydayup.nacos.ip:localhost}:${daydayup.nacos.port:8848}
+        namespace: ${daydayup.nacos.namespace}
+        username: ${daydayup.nacos.username:nacos}
+        password: ${daydayup.nacos.password:nacos}
+      discovery:
+        server-addr: ${daydayup.nacos.ip:localhost}:${daydayup.nacos.port:8848}
+        namespace: ${daydayup.nacos.namespace}
+        username: ${daydayup.nacos.username:nacos}
+        password: ${daydayup.nacos.password:nacos}

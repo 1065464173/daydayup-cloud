@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>daydayup-cloud</artifactId>
+        <groupId>top.sxuet</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>daydayup-nacos</artifactId>
+    <name>${project.artifactId}</name>
+    <description>Nacos服务</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>daydayup-nacos-server</module>
+        <module>daydayup-nacos-controller</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>top.sxuet</groupId>
+                <artifactId>daydayup-nacos-controller</artifactId>
+                <version>${daydayup-project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
